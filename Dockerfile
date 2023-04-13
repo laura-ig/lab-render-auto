@@ -11,7 +11,7 @@ RUN npm run build
 # Release
 FROM base AS release
 ENV STATIC_FILES_PATH=./public
-COPY --from=build-front /usr/app/dist $STATIC_FILES_PATH
+COPY --from=build-front /usr/app/dist/page $STATIC_FILES_PATH
 COPY ./server/package.json ./
 COPY ./server/package-lock.json ./
 COPY ./server/index.js ./
